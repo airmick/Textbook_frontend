@@ -44,7 +44,7 @@
                     </ul>
                   <!-- i will come back here later to fix after i implement login and register code -->
                     <!-- <ul class="navbar-nav ml-auto mt-2">
-                      <li class="nav-item" class="nav-link" href="#">Log Out</li>
+                      <li class="nav-item" class="nav-link" href="/logout">Log Out</li>
                     </ul> -->
                     <ul class="navbar-nav ml-auto mt-2">
                         <li class="nav-item">
@@ -56,8 +56,15 @@
                     </ul>
                 </div>
             </div>
-
         </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
 
         <div>
             <main class="container p-5">
