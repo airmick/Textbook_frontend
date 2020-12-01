@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <h3>list of books available</h3>
+    <ul class="list-group">
+        {% for post in posts %}
+            <li class="list-group-item"><a href="textbook/{{ post.textbook_id }}"> {{ post.name }}</a></li>
+            <p>book id is {{ post.book_id }} and its ISBN is {{ post.isbn }}</p>
+            <p> price{{ post.price }} and Volume: {{ post.book_volume }}</p>
+            <p>Description: {{ post.description }} edition: {{ post.edition }}</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
